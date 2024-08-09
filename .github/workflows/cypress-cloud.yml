@@ -14,17 +14,17 @@ jobs:
       - name: Get code
         uses: actions/checkout@v4.1.7  
 
-    - name: Cypress run
-      uses: cypress-io/github-action@v6.5.0
-      with:
-        install-command: yarn install
-        browser: electron
-        record: true
-        group: UI Electron
-        spec: ${{ github.event.inputs.spec }}
-      env:
-        CYPRESS_RECORD_KEY: 390f3d1c-1b8c-4838-bad7-2f1d8db471ca
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Cypress run
+        uses: cypress-io/github-action@v6.5.0
+        with:
+          install-command: yarn install
+          browser: electron
+          record: true
+          group: UI Electron
+          spec: ${{ github.event.inputs.spec }}
+        env:
+          CYPRESS_RECORD_KEY: 390f3d1c-1b8c-4838-bad7-2f1d8db471ca
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
 
       
